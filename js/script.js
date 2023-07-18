@@ -1,3 +1,13 @@
+
+
+
+
+
+
+
+
+
+
 let words=document.querySelectorAll(".word");
 words.forEach((word)=>{
     let letters=word.textContent.split("");
@@ -34,5 +44,11 @@ let changeText=()=>{
 };
 
 changeText();
-setInterval(cha,3000);
+setInterval(cha,3000)
+
+
+
+
+
+
 
