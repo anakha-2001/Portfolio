@@ -8,6 +8,9 @@
     scroll-behavior: smooth;
     text-decoration: none;
 }
+index.html{
+   overflow: hidden;
+}
 
 :root{
     --text-color:#eee4e4 ;
@@ -28,6 +31,7 @@
     0 0 150px rgba(18,247,255,0.3);
     
 }
+
  body{
    font-family:"poppins",sans-serif;
    background-color: var(--bg-color) ; 
@@ -111,9 +115,10 @@ section{
    margin-left: 620px;
    margin-top: -290px;
    right: 20px;
-   
 }
-
+.home-image .img-box img{
+   max-width: 300px;
+}
 .home-content{
    max-width: 600px;
    text-align: left;
@@ -710,22 +715,3 @@ section{
          box-shadow: var(--neon-box-shadow);
       }
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

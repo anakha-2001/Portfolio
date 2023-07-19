@@ -27,7 +27,7 @@
             <h2>Contact Me</h2>
         </div>
 
-        <form action="">
+        <form name="submit-to-google-sheet" class="msgform">
             <input type="text" placeholder="Your Name" name="name">
             <input type="text" placeholder="Your Email" name="email">
             <input type="text" placeholder="Your Address" name="Address">
@@ -36,19 +36,36 @@
             <div class="btn-box formBtn">
                 <button type="Submit" class="btn">Send Message</button>
             </div>
-
-          
-
-
         </form>
+        <span id="msg"></span>
         <div class="social-icons">
             <a href=""><i class='bx bxl-instagram' style='color:white'></i></a>
             <a href=""><i class='bx bxl-telegram' style='color:white'></i></a>
-            <a href=""><i class='bx bxl-linkedin' style='color:white'></i></a>
-            <a href=""><i class='bx bxl-github' style='color:white'  ></i></a>
+            <a href="https://in.linkedin.com/"><i class='bx bxl-linkedin' style='color:white'></i></a>
+            <a href="https://github.com/anakha-2001"><i class='bx bxl-github' style='color:white'  ></i></a>
         </div>
     </section>
     <footer>
         <p>Copyright copy; 2023 by Anakha || All Right Reserved  </p>
         <a href="index.html"><i class='bx bx-up-arrow-alt'></i></a>
-      </footer>
+    </footer>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyJvqMinbY3_o-VH9v-17EJ8H1VNYmTQZBfoFK71EYWhITju3ksJK9fX4rOHbLV3kyqhA/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+</body>
+    
